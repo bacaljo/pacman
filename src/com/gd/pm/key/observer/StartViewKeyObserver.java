@@ -1,7 +1,7 @@
 package com.gd.pm.key.observer;
 
-import com.gd.pm.key.GameKeyObserver;
 import com.gd.pm.key.GameKeyAction;
+import com.gd.pm.key.GameKeyObserver;
 
 import java.awt.event.KeyEvent;
 
