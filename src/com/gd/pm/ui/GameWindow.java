@@ -2,6 +2,7 @@ package com.gd.pm.ui;
 
 import com.gd.pm.key.GameKeyManager;
 import com.gd.pm.key.GameKeyObserver;
+import com.gd.pm.main.GameLoop;
 
 import javax.swing.JFrame;
 import java.awt.Dimension;
@@ -34,7 +35,23 @@ public final class GameWindow {
         jFrame.setVisible(true);
     }
 
+    public void render() {
+        jFrame.repaint();
+    }
+
+    public void setGameLoop(GameLoop gameLoop) {
+        gamePanel.setGameLoop(gameLoop);
+    }
+
     public void addGameKeyObserver(GameKeyObserver gameKeyObserver) {
         gameKeyManager.addGameKeyObserver(gameKeyObserver);
+    }
+
+    public int getWidth() {
+        return gamePanel.getWidth();
+    }
+
+    public int getHeight() {
+        return gamePanel.getHeight();
     }
 }
