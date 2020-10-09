@@ -5,7 +5,7 @@ import com.gd.pm.ui.GameWindow;
 import java.awt.Color;
 import java.awt.Graphics;
 
-public class GameLoop {
+public final class GameLoop {
     private GameWindow gameWindow;
     private final int fps;
 
