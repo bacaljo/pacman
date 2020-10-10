@@ -1,5 +1,6 @@
 package com.gd.pm;
 
+import com.gd.pm.main.FontLoader;
 import com.gd.pm.main.GameLoop;
 import com.gd.pm.ui.GameDimension;
 import com.gd.pm.ui.GameView;
@@ -7,9 +8,14 @@ import com.gd.pm.ui.GameViewManager;
 import com.gd.pm.ui.GameWindow;
 import com.gd.pm.ui.view.StartView;
 
+import java.awt.FontFormatException;
+import java.io.IOException;
+
 public class PacmanGame {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException, IOException, FontFormatException {
+        FontLoader.load();
+
         GameWindow gameWindow = new GameWindow("Pacman", new GameDimension(1000, 600));
         gameWindow.show();
 
