@@ -21,16 +21,16 @@ public final class StartView extends GameView {
 
     @Override
     public void render(GameGraphics gameGraphics) {
-        gameGraphics.adjustFontFamily("Verdana");
-
-        gameGraphics.adjustFontSize(144);
+        gameGraphics.adjustFontFamily("Onion soup");
+        gameGraphics.adjustFontSize(160);
         gameGraphics.drawString("Pacman",
                 new Position().setPositions(HorizontalPosition.MIDDLE, VerticalPosition.MIDDLE),
                 WHITE);
 
-        gameGraphics.adjustFontSize(24);
+        gameGraphics.adjustFontFamily("AtlandSketches BB");
+        gameGraphics.adjustFontSize(36);
         gameGraphics.drawString("Press space to play",
-                new Position().setPositions(HorizontalPosition.MIDDLE, VerticalPosition.BOTTOM).offsetYBy(-20),
+                new Position().setPositions(HorizontalPosition.MIDDLE, VerticalPosition.BOTTOM).offsetYBy(-50),
                 WHITE);
     }
 }
