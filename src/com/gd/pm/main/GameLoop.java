@@ -1,9 +1,11 @@
 package com.gd.pm.main;
 
+import com.gd.pm.ui.GameDimension;
 import com.gd.pm.ui.GameWindow;
 import com.gd.pm.view.GameViewManager;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Graphics;
 
 public final class GameLoop {
@@ -31,10 +33,10 @@ public final class GameLoop {
         System.out.println("Updating...");
     }
 
-    public void render(Graphics g) {
+    public void render(Graphics g, GameDimension gameDimension) {
         g.setColor(Color.BLACK);
-        g.fillRect(0, 0, gameWindow.getWidth(), gameWindow.getHeight());
-        gameViewManager.render(g);
+        g.fillRect(0, 0, gameDimension.getWidth(), gameDimension.getHeight());
+        gameViewManager.render(g, gameDimension);
         System.out.println("Rendering...");
     }
 }

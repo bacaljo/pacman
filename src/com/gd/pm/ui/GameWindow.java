@@ -5,7 +5,6 @@ import com.gd.pm.key.GameKeyObserver;
 import com.gd.pm.main.GameLoop;
 
 import javax.swing.JFrame;
-import java.awt.Dimension;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
@@ -14,9 +13,9 @@ public final class GameWindow {
     private GamePanel gamePanel;
     private GameKeyManager gameKeyManager;
 
-    public GameWindow(String title, Dimension dimension) {
+    public GameWindow(String title, GameDimension gameDimension) {
         jFrame = new JFrame(title);
-        gamePanel = new GamePanel(dimension);
+        gamePanel = new GamePanel(gameDimension);
         gameKeyManager = new GameKeyManager();
 
         setup();
@@ -45,13 +44,5 @@ public final class GameWindow {
 
     public void addGameKeyObserver(GameKeyObserver gameKeyObserver) {
         gameKeyManager.addGameKeyObserver(gameKeyObserver);
-    }
-
-    public int getWidth() {
-        return gamePanel.getWidth();
-    }
-
-    public int getHeight() {
-        return gamePanel.getHeight();
     }
 }
