@@ -28,12 +28,10 @@ public final class GameLoop {
 
     public void update() {
         gameViewManager.update();
-        System.out.println("Updating...");
     }
 
     public void render(GameGraphics gameGraphics) {
         gameGraphics.fillBackground(Color.BLACK);
         gameViewManager.render(gameGraphics);
-        System.out.println("Rendering...");
     }
 }
