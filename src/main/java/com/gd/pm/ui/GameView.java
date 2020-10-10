@@ -1,8 +1,7 @@
 package com.gd.pm.ui;
 
 import com.gd.pm.key.GameKeyObserver;
-
-import java.awt.Graphics;
+import com.gd.pm.ui.graphic.GameGraphics;
 
 public abstract class GameView {
     private GameKeyObserver gameKeyObserver;
@@ -13,7 +12,7 @@ public abstract class GameView {
 
     public abstract void update();
 
-    public abstract void render(Graphics g, GameDimension gameDimension);
+    public abstract void render(GameGraphics gameGraphics);
 
     public GameKeyObserver getGameKeyObserver() {
         return gameKeyObserver;

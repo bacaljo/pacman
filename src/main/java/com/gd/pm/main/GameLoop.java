@@ -1,11 +1,10 @@
 package com.gd.pm.main;
 
-import com.gd.pm.ui.GameDimension;
 import com.gd.pm.ui.GameViewManager;
 import com.gd.pm.ui.GameWindow;
+import com.gd.pm.ui.graphic.GameGraphics;
 
 import java.awt.Color;
-import java.awt.Graphics;
 
 public final class GameLoop {
     private final int fps;
@@ -32,10 +31,9 @@ public final class GameLoop {
         System.out.println("Updating...");
     }
 
-    public void render(Graphics g, GameDimension gameDimension) {
-        g.setColor(Color.BLACK);
-        g.fillRect(0, 0, gameDimension.getWidth(), gameDimension.getHeight());
-        gameViewManager.render(g, gameDimension);
+    public void render(GameGraphics gameGraphics) {
+        gameGraphics.fillBackground(Color.BLACK);
+        gameViewManager.render(gameGraphics);
         System.out.println("Rendering...");
     }
 }

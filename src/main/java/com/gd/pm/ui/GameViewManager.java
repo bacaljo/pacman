@@ -1,6 +1,7 @@
 package com.gd.pm.ui;
 
-import java.awt.Graphics;
+import com.gd.pm.ui.graphic.GameGraphics;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -22,12 +23,12 @@ public final class GameViewManager {
         currentGameView.update();
     }
 
-    public void render(Graphics g, GameDimension gameDimension) {
+    public void render(GameGraphics gameGraphics) {
         if (currentGameView == null) {
             return;
         }
 
-        currentGameView.render(g, gameDimension);
+        currentGameView.render(gameGraphics);
     }
 
     public void put(String viewName, GameView gameView) {

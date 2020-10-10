@@ -1,6 +1,7 @@
 package com.gd.pm.ui;
 
 import com.gd.pm.main.GameLoop;
+import com.gd.pm.ui.graphic.GameGraphics;
 
 import javax.swing.JPanel;
 import java.awt.Graphics;
@@ -25,6 +26,6 @@ public final class GamePanel extends JPanel {
             return;
         }
 
-        gameLoop.render(g, gameDimension);
+        gameLoop.render(new GameGraphics(g, gameDimension));
     }
 }
