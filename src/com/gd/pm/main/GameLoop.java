@@ -1,11 +1,10 @@
 package com.gd.pm.main;
 
 import com.gd.pm.ui.GameDimension;
+import com.gd.pm.ui.GameViewManager;
 import com.gd.pm.ui.GameWindow;
-import com.gd.pm.view.GameViewManager;
 
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Graphics;
 
 public final class GameLoop {

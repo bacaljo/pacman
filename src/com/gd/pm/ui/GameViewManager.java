@@ -1,7 +1,4 @@
-package com.gd.pm.view;
-
-import com.gd.pm.main.GameView;
-import com.gd.pm.ui.GameDimension;
+package com.gd.pm.ui;
 
 import java.awt.Graphics;
 import java.util.ArrayList;

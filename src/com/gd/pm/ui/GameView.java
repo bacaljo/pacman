@@ -1,7 +1,6 @@
-package com.gd.pm.main;
+package com.gd.pm.ui;
 
 import com.gd.pm.key.GameKeyObserver;
-import com.gd.pm.ui.GameDimension;
 
 import java.awt.Graphics;
 

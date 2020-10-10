@@ -1,11 +1,11 @@
 package com.gd.pm;
 
 import com.gd.pm.main.GameLoop;
-import com.gd.pm.main.GameView;
 import com.gd.pm.ui.GameDimension;
+import com.gd.pm.ui.GameView;
+import com.gd.pm.ui.GameViewManager;
 import com.gd.pm.ui.GameWindow;
-import com.gd.pm.view.GameViewManager;
-import com.gd.pm.view.StartView;
+import com.gd.pm.ui.view.StartView;
 
 public class PacmanGame {
 

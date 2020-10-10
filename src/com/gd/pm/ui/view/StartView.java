@@ -1,11 +1,12 @@
-package com.gd.pm.view;
+package com.gd.pm.ui.view;
 
 import com.gd.pm.key.observer.StartViewKeyObserver;
-import com.gd.pm.main.GameView;
+import com.gd.pm.ui.GameDimension;
+import com.gd.pm.ui.GameView;
 
 import java.awt.Graphics;
 
-public class StartView extends GameView {
+public final class StartView extends GameView {
     public StartView() {
         super(new StartViewKeyObserver());
     }
@@ -16,7 +17,7 @@ public class StartView extends GameView {
     }
 
     @Override
-    public void render(Graphics g) {
+    public void render(Graphics g, GameDimension gameDimension) {
 
     }
 }
