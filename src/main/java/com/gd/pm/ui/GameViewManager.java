@@ -31,9 +31,9 @@ public final class GameViewManager {
         currentGameView.render(gameGraphics);
     }
 
-    public void put(String viewName, GameView gameView) {
+    public void put(GameView gameView) {
         gameView.setGameViewManager(this);
-        viewNameGameViewMap.put(viewName, gameView);
+        viewNameGameViewMap.put(gameView.getViewName(), gameView);
 
         if (currentGameView == null) {
             currentGameView = gameView;
@@ -44,7 +44,7 @@ public final class GameViewManager {
     public void setCurrentGameView(String gameViewName) {
         currentGameView.setEnabled(false);
 
-        currentGameView = viewNameGameViewMap.get(gameViewName);
+        currentGameView = viewNameGameViewMap.getOrDefault(gameViewName, null);
         currentGameView.setEnabled(true);
     }
 
