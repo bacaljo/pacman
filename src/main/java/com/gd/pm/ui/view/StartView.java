@@ -1,7 +1,6 @@
 package com.gd.pm.ui.view;
 
 import com.gd.pm.key.GameKeyAction;
-import com.gd.pm.key.GameKeyObserver;
 import com.gd.pm.ui.GameView;
 import com.gd.pm.ui.graphic.GameGraphics;
 import com.gd.pm.ui.property.HorizontalPosition;
@@ -13,27 +12,6 @@ import java.awt.event.KeyEvent;
 import static java.awt.Color.WHITE;
 
 public final class StartView extends GameView {
-
-    @Override
-    protected GameKeyObserver initializeKeyObserver() {
-        return new GameKeyObserver() {
-            @Override
-            protected void initialize() {
-                put(KeyEvent.VK_ESCAPE, new GameKeyAction() {
-
-                    @Override
-                    public void press() {
-                        System.exit(0);
-                    }
-
-                    @Override
-                    public void release(double pressDuration) {
-
-                    }
-                });
-            }
-        };
-    }
 
     @Override
     public void update() {
@@ -53,5 +31,21 @@ public final class StartView extends GameView {
         gameGraphics.drawString("Press space to play",
                 new Position().setPositions(HorizontalPosition.MIDDLE, VerticalPosition.BOTTOM).offsetYBy(-50),
                 WHITE);
+    }
+
+    @Override
+    protected void initializeKeyObserver() {
+        put(KeyEvent.VK_ESCAPE, new GameKeyAction() {
+
+            @Override
+            public void press() {
+                System.exit(0);
+            }
+
+            @Override
+            public void release(double pressDuration) {
+
+            }
+        });
     }
 }

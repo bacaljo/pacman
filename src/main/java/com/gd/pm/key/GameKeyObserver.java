@@ -21,10 +21,10 @@ public abstract class GameKeyObserver {
 
             }
         };
-        initialize();
+        initializeKeyObserver();
     }
 
-    protected abstract void initialize();
+    protected abstract void initializeKeyObserver();
 
     public void press(int keyCode) {
         keyActionMap.getOrDefault(keyCode, emptyGameKeyAction)

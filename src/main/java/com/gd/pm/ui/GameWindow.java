@@ -5,6 +5,7 @@ import com.gd.pm.key.GameKeyObserver;
 import com.gd.pm.main.GameLoop;
 
 import javax.swing.JFrame;
+import java.util.List;
 
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 
@@ -42,7 +43,7 @@ public final class GameWindow {
         gamePanel.setGameLoop(gameLoop);
     }
 
-    public void addGameKeyObserver(GameKeyObserver gameKeyObserver) {
-        gameKeyManager.addGameKeyObserver(gameKeyObserver);
+    public void setGameKeyObserverList(List<GameKeyObserver> gameKeyObserverList) {
+        gameKeyManager.setGameKeyObserverList(gameKeyObserverList);
     }
 }

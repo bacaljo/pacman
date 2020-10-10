@@ -3,13 +3,14 @@ package com.gd.pm;
 import com.gd.pm.main.FontLoader;
 import com.gd.pm.main.GameLoop;
 import com.gd.pm.ui.GameDimension;
-import com.gd.pm.ui.GameView;
 import com.gd.pm.ui.GameViewManager;
 import com.gd.pm.ui.GameWindow;
 import com.gd.pm.ui.view.StartView;
 
 import java.awt.FontFormatException;
 import java.io.IOException;
+
+import static java.util.Collections.unmodifiableList;
 
 public class PacmanGame {
 
@@ -22,9 +23,7 @@ public class PacmanGame {
         GameViewManager gameViewManager = new GameViewManager();
         gameViewManager.put("start", new StartView());
 
-        for (GameView gameView : gameViewManager.getGameViewList()) {
-            gameWindow.addGameKeyObserver(gameView.getGameKeyObserver());
-        }
+        gameWindow.setGameKeyObserverList(unmodifiableList(gameViewManager.getGameViewList()));
 
         GameLoop gameLoop = new GameLoop(100, gameWindow, gameViewManager);
         gameLoop.start();

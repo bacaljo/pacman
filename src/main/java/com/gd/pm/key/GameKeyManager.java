@@ -12,8 +12,8 @@ public final class GameKeyManager implements KeyListener {
         gameKeyObserverList = new ArrayList<>();
     }
 
-    public void addGameKeyObserver(GameKeyObserver gameKeyObserver) {
-        gameKeyObserverList.add(gameKeyObserver);
+    public void setGameKeyObserverList(List<GameKeyObserver> gameKeyObserverList) {
+        this.gameKeyObserverList = gameKeyObserverList;
     }
 
     @Override

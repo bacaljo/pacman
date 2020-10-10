@@ -36,16 +36,16 @@ public final class GameViewManager {
         viewNameGameViewMap.put(viewName, gameView);
 
         if (currentGameView == null) {
-            setCurrentGameView(viewName);
+            currentGameView = gameView;
+            currentGameView.setEnabled(true);
         }
     }
 
     public void setCurrentGameView(String gameViewName) {
-        for (GameView gameView : getGameViewList()) {
-            gameView.getGameKeyObserver().setEnabled(false);
-        }
+        currentGameView.setEnabled(false);
+
         currentGameView = viewNameGameViewMap.get(gameViewName);
-        currentGameView.getGameKeyObserver().setEnabled(true);
+        currentGameView.setEnabled(true);
     }
 
     public List<GameView> getGameViewList() {
