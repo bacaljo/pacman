@@ -5,6 +5,7 @@ import com.gd.pm.main.GameLoop;
 import com.gd.pm.ui.GameDimension;
 import com.gd.pm.ui.GameViewManager;
 import com.gd.pm.ui.GameWindow;
+import com.gd.pm.ui.view.PlayView;
 import com.gd.pm.ui.view.StartView;
 
 import java.awt.FontFormatException;
@@ -21,7 +22,8 @@ public class PacmanGame {
         gameWindow.show();
 
         GameViewManager gameViewManager = new GameViewManager();
-        gameViewManager.put("start", new StartView());
+        gameViewManager.put(new StartView());
+        gameViewManager.put(new PlayView());
 
         gameWindow.setGameKeyObserverList(unmodifiableList(gameViewManager.getGameViewList()));
 

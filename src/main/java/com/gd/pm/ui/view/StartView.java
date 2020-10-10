@@ -7,11 +7,15 @@ import com.gd.pm.ui.property.HorizontalPosition;
 import com.gd.pm.ui.property.Position;
 import com.gd.pm.ui.property.VerticalPosition;
 
-import java.awt.event.KeyEvent;
-
 import static java.awt.Color.WHITE;
+import static java.awt.event.KeyEvent.VK_ESCAPE;
+import static java.awt.event.KeyEvent.VK_SPACE;
 
 public final class StartView extends GameView {
+
+    public StartView() {
+        super("start");
+    }
 
     @Override
     public void update() {
@@ -35,11 +39,23 @@ public final class StartView extends GameView {
 
     @Override
     protected void initializeKeyObserver() {
-        put(KeyEvent.VK_ESCAPE, new GameKeyAction() {
+        put(VK_ESCAPE, new GameKeyAction() {
 
             @Override
             public void press() {
                 System.exit(0);
+            }
+
+            @Override
+            public void release(double pressDuration) {
+
+            }
+        });
+        put(VK_SPACE, new GameKeyAction() {
+
+            @Override
+            public void press() {
+                getGameViewManager().setCurrentGameView("play");
             }
 
             @Override
