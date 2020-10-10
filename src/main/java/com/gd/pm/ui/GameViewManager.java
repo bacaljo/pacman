@@ -32,6 +32,7 @@ public final class GameViewManager {
     }
 
     public void put(String viewName, GameView gameView) {
+        gameView.setGameViewManager(this);
         viewNameGameViewMap.put(viewName, gameView);
 
         if (currentGameView == null) {

@@ -1,17 +1,38 @@
 package com.gd.pm.ui.view;
 
-import com.gd.pm.key.observer.StartViewKeyObserver;
+import com.gd.pm.key.GameKeyAction;
+import com.gd.pm.key.GameKeyObserver;
 import com.gd.pm.ui.GameView;
 import com.gd.pm.ui.graphic.GameGraphics;
 import com.gd.pm.ui.property.HorizontalPosition;
 import com.gd.pm.ui.property.Position;
 import com.gd.pm.ui.property.VerticalPosition;
 
+import java.awt.event.KeyEvent;
+
 import static java.awt.Color.WHITE;
 
 public final class StartView extends GameView {
-    public StartView() {
-        super(new StartViewKeyObserver());
+
+    @Override
+    protected GameKeyObserver initializeKeyObserver() {
+        return new GameKeyObserver() {
+            @Override
+            protected void initialize() {
+                put(KeyEvent.VK_ESCAPE, new GameKeyAction() {
+
+                    @Override
+                    public void press() {
+                        System.exit(0);
+                    }
+
+                    @Override
+                    public void release(double pressDuration) {
+
+                    }
+                });
+            }
+        };
     }
 
     @Override
