@@ -7,6 +7,7 @@ import java.util.List;
 
 public class GameObjectManager {
     private List<GameObject> gameObjectList;
+    private GameMap gameMap;
 
     public GameObjectManager() {
         gameObjectList = new ArrayList<>();
@@ -26,5 +27,13 @@ public class GameObjectManager {
         gameObjectList.stream()
                 .filter(GameObject::isVisible)
                 .forEach(gameObject -> gameObject.render(gameGraphics));
+    }
+
+    public GameMap getGameMap() {
+        return gameMap;
+    }
+
+    public void setGameMap(GameMap gameMap) {
+        this.gameMap = gameMap;
     }
 }
