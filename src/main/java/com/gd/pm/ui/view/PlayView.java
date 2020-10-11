@@ -1,6 +1,8 @@
 package com.gd.pm.ui.view;
 
+import com.gd.pm.gameplay.GameMap;
 import com.gd.pm.gameplay.GameObjectManager;
+import com.gd.pm.gameplay.map.PlainMap;
 import com.gd.pm.gameplay.object.Pacman;
 import com.gd.pm.gameplay.property.Location;
 import com.gd.pm.key.GameKeyAction;
@@ -26,6 +28,7 @@ public final class PlayView extends GameView {
     private boolean isPaused;
     private GameObjectManager gameObjectManager;
     private Pacman pacman;
+    private GameMap gameMap;
 
     public PlayView() {
         super("play");
@@ -33,6 +36,9 @@ public final class PlayView extends GameView {
 
         pacman = new Pacman(new Location(10, 10), UP);
         gameObjectManager.addGameObject(pacman);
+
+        gameMap = new PlainMap(80);
+        gameObjectManager.setGameMap(gameMap);
     }
 
     @Override
@@ -46,6 +52,7 @@ public final class PlayView extends GameView {
 
     @Override
     public void render(GameGraphics gameGraphics) {
+        gameMap.render(gameGraphics);
         gameObjectManager.render(gameGraphics);
 
         gameGraphics.adjustFontFamily("AtlandSketches BB");
