@@ -22,6 +22,16 @@ public final class GameGraphics {
         graphics.fillRect(0, 0, gameDimension.getWidth(), gameDimension.getHeight());
     }
 
+    public void fillRect(int x, int y, int width, int height, Color color) {
+        graphics.setColor(color);
+        graphics.fillRect(x, y, width, height);
+    }
+
+    public void drawRect(int x, int y, int width, int height, Color color) {
+        graphics.setColor(color);
+        graphics.drawRect(x, y, width, height);
+    }
+
     public void fillOval(int x, int y, int width, int height, Color color) {
         graphics.setColor(color);
         graphics.fillOval(x, y, width, height);
